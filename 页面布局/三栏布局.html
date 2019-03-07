@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="layout float">
+        <style>
+            .layout.float article div {
+                height: 100px;
+            }
+            .layout.float .left {
+                float: left;
+                width: 300px;
+                background: pink;
+            }
+            .layout.float .right {
+                float: right;
+                width: 300px;
+                background: lightblue;
+            }
+            .layout.float .center {
+                background: yellow;
+            }
+            .layout.float article::after {
+                display: block;
+                content: "";
+                clear: both;
+            }
+        </style>
+
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center">浮动布局</div>
+        </article>
+    </section>
+
+    <section class="layout position">
+        <style>
+            .layout.position  article {
+                position: relative;
+                margin-top: 20px;
+            }
+            .layout.position article div {
+                position: absolute;
+                height: 100px;
+            }
+            .layout.position .left {
+                left: 0;
+                top: 0;
+                width: 300px;
+                background: pink;
+            }
+            .layout.position .right {
+                right: 0;
+                top: 0;
+                width: 300px;
+                background: lightblue;
+            }
+            .layout.position .center {
+                left: 300px;
+                right: 300px;
+                background: yellow;
+            }
+        </style>
+
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">绝对定位布局</div>
+            <div class="right"></div>
+        </article>
+    </section>
+    
+    <section class="layout flex">
+        <style>
+            .layout.flex {
+                margin-top: 140px;
+            }
+            .layout.flex  article {
+                display: flex;
+                justify-content: space-between;
+                height: 100px;
+            }
+            .layout.flex .left {
+                width: 300px;
+                background: pink;
+            }
+            .layout.flex .right {
+                width: 300px;
+                background: lightblue;
+            }
+            .layout.flex .center {
+                flex: 1;
+                background: yellow;
+            }
+        </style>
+
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">flex布局</div>
+            <div class="right"></div>
+        </article>
+    </section>
+
+    <section class="layout grid">
+        <style>
+            .layout.grid {
+                margin-top: 20px;
+            }
+            .layout.grid  article {
+                display: grid;
+                grid-template-columns: 300px auto 300px;
+                grid-template-rows: 100px;
+            }
+            .layout.grid .left {
+                background: pink;
+            }
+            .layout.grid .right {
+                background: lightblue;
+            }
+            .layout.grid .center {
+                background: yellow;
+            }
+        </style>
+
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">grid布局</div>
+            <div class="right"></div>
+        </article>
+    </section>
+
+    <section class="layout table">
+        <style>
+            .layout.table {
+                margin-top: 20px;
+            }
+            .layout.table  article {
+                display: table;
+                height: 100px;
+                width: 100%;
+            }
+            .layout.table .left {
+                display: table-cell;
+                width: 300px;
+                background: pink;
+            }
+            .layout.table .right {
+                display: table-cell;
+                width: 300px;
+                background: lightblue;
+            }
+            .layout.table .center {
+                height: 100%;                
+                background: yellow;
+            }
+        </style>
+
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">table布局</div>
+            <div class="right"></div>
+        </article>
+    </section>
+</body>
+</html>
